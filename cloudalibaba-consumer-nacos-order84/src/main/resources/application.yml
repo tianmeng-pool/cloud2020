@@ -1,0 +1,24 @@
+server:
+  port: 84
+
+spring:
+  application:
+    name: cloud-consumer-order84
+  cloud:
+    sentinel:
+      transport:
+        port: 8719
+        dashboard: localhost:8080
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+# 激活sentinel对feign的支持
+feign:
+  sentinel:
+    enabled: true
